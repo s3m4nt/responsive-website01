@@ -1,1 +1,1 @@
-# Responsive Web Design using CSS Grid
+## Responsive web design study using CSS Grid
