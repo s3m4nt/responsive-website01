@@ -1,7 +1,5 @@
-
 $(document).ready(function() {
   
-
 /* -----------------------------------------------
                 MOBILE NAVIGATION     
 -------------------------------------------------- */
@@ -15,9 +13,17 @@ $(document).ready(function() {
 		      $(".main-nav").removeClass("mobile-show");
 	  }
   
-  });
+  })
 
-});
+//   simple eventlistener alert for subscribe button click
+	const btn = document.querySelector('.subscribe')
+	btn.addEventListener('click', (e) => {
+		e.preventDefault()
+		alert("You've clicked the subscribe button")
+	})
+
+})
+
 
 
 
