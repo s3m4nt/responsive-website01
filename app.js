@@ -15,11 +15,15 @@ $(document).ready(function() {
   
   })
 
-//   simple eventlistener alert for subscribe button click
+//   simple eventlistener w/ alert for subscribe button click
+
 	const btn = document.querySelector('.subscribe')
 	btn.addEventListener('click', (e) => {
+		
 		e.preventDefault()
-		alert("You've clicked the subscribe button")
+		const email = document.getElementById('email').value 
+
+		alert(`You've clicked the subscribe button using the email address: ${email}`)
 	})
 
 })
