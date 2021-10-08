@@ -1,0 +1,222 @@
+  <style>
+    body {
+      font-family: "Prompt", sans-serif;
+      background-image: url("./images/Zircon.jpg");
+    }
+
+    .nav-wrapper {
+      /* keeps center wrapper centered and 1200px */
+      max-width: 1200px;
+      /* center element */
+      margin: 0 auto;
+      margin-top: 30px;
+      padding: 15px 20px;
+      display: grid;
+      grid-template-columns: 30% auto;
+    }
+
+    .nav-wrapper a {
+      letter-spacing: .1em;
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .nav-wrapper a:hover {
+      cursor: pointer;
+      color: #eee;
+    }
+
+    .list-item {
+      margin-left: 10px;
+      text-transform: uppercase;
+      padding: 10px;
+      color: #000;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .nav-wrapper ul li {
+      display: inline;
+      list-style-type: none;
+    }
+
+    .nav-items {
+      text-align: right;
+      padding-top: 10px;
+    }
+
+    .main-wrapper {
+      max-width: 1200px;
+      /* center element */
+      margin: 0 auto;
+    }
+
+    .burger-icon {
+      display: none;
+    }
+
+    .wrapper {
+      max-width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      grid-template-areas:
+        "featuredMain featuredMain featuredSub"
+        "contentMain contentMain contentSub";
+    }
+
+    .wrapper>.featured,
+    .wrapper>.sub-featured>div,
+    .wrapper>.main-content,
+    .wrapper>.main-sidebar {
+      padding: 20px;
+    }
+
+    .featured {
+      grid-area: featuredMain;
+      min-height: 500px;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)) border-box, url('https://source.unsplash.com/1600x900/?cars') no-repeat center center;
+      color: #fff;
+      display: grid;
+      align-content: flex-end;
+    }
+
+    .featured h1 {
+      font-size: 36px;
+      max-width: 650px;
+    }
+
+    .main-content,
+    .featured,
+    .sub-featured>div,
+    .main-sidebar {
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .sub-featured {
+      grid-area: featuredSub;
+      background-color: blue;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+    }
+
+    .sub-featured {}
+
+    .sub1 {
+      background-color: green;
+    }
+
+    .sub2 {
+      background-color: green;
+    }
+
+    .sub3 {
+      background-color: green;
+    }
+
+    .main-content {
+      grid-area: contentMain;
+      background-color: orange;
+    }
+
+    .main-sidebar {
+      grid-area: contentSub;
+      background-color: yellow;
+    }
+
+    .footer {
+      display: grid;
+      margin: 0 auto;
+      grid-template-columns: minmax(20px, 300px) minmax(20px, 300px) minmax(20px, 300px) minmax(20px, 300px);
+      justify-content: center;
+      grid-template-rows: 1fr 1fr;
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* TABLET MEDIA QUERY */
+    @media screen and (max-width: 950px) {
+      .wrapper {
+        grid-template-areas: "featuredMain featuredMain featuredMain"
+          "featuredSub featuredSub featuredSub"
+          "contentMain contentMain contentSub";
+      }
+
+      .sub-featured {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .nav-items {
+        grid-column: 1/5;
+        text-align: center;
+      }
+
+      .logo {
+        grid-column: 1/5;
+        text-align: center;
+      }
+
+      .nav-wrapper {
+        margin-top: 0px;
+      }
+    }
+
+    /* MOBILE MEDIA QUERY */
+    @media screen and (max-width: 690px) {
+      .logo {
+        grid-column: 1/3;
+
+      }
+
+      .nav-items {
+        grid-column: 1/5;
+        text-align: center;
+      }
+
+      .nav-wrapper ul {
+        padding: 0;
+      }
+
+      .nav-wrapper ul li {
+        display: block;
+      }
+
+      .burger-icon {
+        display: inline-block;
+        justify-self: end;
+        grid-column: 4/5;
+        border: 2px solid #333;
+        color: #333;
+        padding: 10px;
+        font-weight: bold;
+        border-radius: 3px;
+      }
+
+      .burger-icon:hover {
+        cursor: pointer;
+      }
+
+      .wrapper {
+        grid-template-areas:
+          "featuredMain featuredMain featuredMain"
+          "contentMain contentMain contentMain"
+          "featuredSub featuredSub featuredSub"
+          "contentSub contentSub contentSub"
+        ;
+      }
+
+      .sub-featured {
+        grid-template-columns: 1fr;
+      }
+
+      .footer>div {
+        grid-column: 1/-1
+      }
+    }
+  </style>
